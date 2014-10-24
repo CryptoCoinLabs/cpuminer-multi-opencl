@@ -6,6 +6,7 @@
 
 // Memory-hard extension of keccak for PoW
 // Copyright (c) 2014 The Boolberry developers
+// Copyright (c) 2014 The DarkNetSpace developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 

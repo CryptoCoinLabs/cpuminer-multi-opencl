@@ -104,8 +104,8 @@ struct workio_cmd {
 };
 
 enum mining_algo {
-    ALGO_WILD_KECCAK, /* Boolberry */
-    ALGO_WILD_KECCAK_OCL, /* Boolberry */
+    ALGO_WILD_KECCAK, /* Boolberry and DarkNetCoin*/
+    ALGO_WILD_KECCAK_OCL, /* Boolberry and DarkNetCoin*/
     ALGO_WILD_KECCAK_OCL_MULTISTEP
 };
 
@@ -167,7 +167,7 @@ uint64_t* pscratchpad_buff = NULL;
 volatile uint64_t  scratchpad_size = 0;
 
 static char scratchpad_file[PATH_MAX];
-static const char cachedir_suffix[] = "boolberry"; /* scratchpad cache saved as ~/.cache/boolberry/scratchpad.bin */
+static const char cachedir_suffix[] = "darknetspace"; /* scratchpad cache saved as ~/.cache/boolberry/scratchpad.bin */
 
 struct scratchpad_hi current_scratchpad_hi;
 static struct addendums_array_entry add_arr[WILD_KECCAK_ADDENDUMS_ARRAY_SIZE];
@@ -1411,7 +1411,7 @@ static void *miner_thread(void *userdata) {
     uint32_t *nonceptr = (uint32_t*) (((char*)work.data) + (jsonrpc_2 ? 39 : 76));
     nonceptr = (uint32_t*) (((char*)work.data) + 1);
 
-    //boolberry job 01000000000000000009048cc3ccbbf6de2095ac436ad08dfa2a42654e866c40bb26bde37baacf300900d684c69d0501ef58fd3722b8cf3068814c5f60fa16b75a13282270c1ece90d7939627708d43a01
+    //job 01000000000000000009048cc3ccbbf6de2095ac436ad08dfa2a42654e866c40bb26bde37baacf300900d684c69d0501ef58fd3722b8cf3068814c5f60fa16b75a13282270c1ece90d7939627708d43a01
     while (1) {
         unsigned long hashes_done;
         struct timeval tv_start, tv_end, diff;
