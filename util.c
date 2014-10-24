@@ -95,7 +95,12 @@ void applog(int prio, const char *fmt, ...)
         struct tm tm;
 
         time(&now);
-        localtime_r(&now, &tm);
+        
+#ifdef WIN32
+        tm = *localtime(&now);
+#else
+        localtime(&now,&tm);
+#endif
 
 		struct timeval curTime;
 		gettimeofday(&curTime, NULL);
