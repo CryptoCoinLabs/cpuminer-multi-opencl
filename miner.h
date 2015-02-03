@@ -2,7 +2,7 @@
 #define __MINER_H__
 
 #include "cpuminer-config.h"
-
+ 
 #include "gpu.h"
 
 #include <stdbool.h>
